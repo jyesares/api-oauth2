@@ -1,0 +1,14 @@
+{
+  "in": {
+    "username": "test",
+    "password": "test"
+  },
+  "out": {
+    "access_token":
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJwYXNzd29yZCI6InRlc3QiLCJpYXQiOjE1MjYzMzQ1OTB9.BrRSEk7aseVsD9FxPc2M9RP1Pq0bTzb46whFSbqlMEE",
+    "token_type": "bearer",
+    "expires_in": "300",
+    "refresh_token":
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJwYXNzd29yZCI6InRlc3QiLCJpYXQiOjE1MjYzMzQ1OTB9.BrRSEk7aseVsD9FxPc2M9RP1Pq0bTzb46whFSbqlMEE"
+  }
+}
