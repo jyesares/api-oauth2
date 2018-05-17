@@ -5,10 +5,12 @@ import apiV1 from './api/v1';
 
 const router = express.Router();
 
-// old api version
+// api version v0
 router.use('/api/v0', api);
 
-// // default version to latest
+// api version v1
+router.use('/api/v1', apiV1);
+//  default version to latest
 router.use('/api', apiV1);
 
 export default router;

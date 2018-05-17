@@ -1,9 +1,16 @@
 import express from 'express';
 
-import ctrl from '../../../controllers';
+import { postClientsHandler, getClientsHandler } from './clients';
+import { authorizeHandler, tokenHandler } from './oauth2';
 
-const router = express.Router();
+const app = express();
 
-router.use('/', ctrl);
+/** CLIENTS */
+app.post('/clients', postClientsHandler);
+app.get('/clients', getClientsHandler);
 
-export default router;
+/** OAUTH2 */
+app.get('/oauth2/authorize', authorizeHandler);
+app.post('/oauth2/token', tokenHandler);
+
+export default app;
