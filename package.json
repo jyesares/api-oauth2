@@ -7,6 +7,7 @@
       "NODE_ENV=dev DEBUG=api-oauth2:* nodemon ./bin/dev --exec babel-node --presets env",
     "start": "node ./bin/prod",
     "build-server": "babel src -d lib --copy-files",
+    "prestart": "npm run build",
     "clean": "rm -rf ./lib && mkdir ./lib",
     "build": "npm run clean && npm run build-server",
     "pretest": "npm run lint",
