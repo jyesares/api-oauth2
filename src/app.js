@@ -2,8 +2,11 @@ import createError from 'http-errors';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
+import { config } from 'dotenv';
 
 import indexRouter from './routes/index';
+
+config({ path: '.env' });
 
 const app = express();
 

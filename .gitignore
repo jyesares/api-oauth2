@@ -61,4 +61,4 @@ typings/
 .next
 
 # prod bundle
-lib
+lib/

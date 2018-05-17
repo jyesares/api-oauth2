@@ -1,3 +1,5 @@
+import jwt from 'jsonwebtoken';
+
 import Code from '../models/code';
 import Token from '../models/token';
 
@@ -37,8 +39,49 @@ async function authorize(req) {
 }
 
 /** TOKEN */
-function token(req) {
-  return 'token';
+
+function signToken(user, secret) {
+  return jwt.sign(
+    {
+      iss: 'jyesares',
+      sub: user.id,
+      iat: new Date().getTime(),
+      exp: new Date().setDate(new Date().getDate() + 1),
+    },
+    secret,
+  );
+}
+async function token(req) {
+  const {
+    body: {
+      grant_type: grantType,
+      code,
+      redirect_uri: redirectUri,
+      client_id: clientId,
+    },
+  } = req;
+
+  const accessToken = signToken({ id: '1' }, process.env.JWT_SECRET);
+  const refreshToken = signToken({ id: '2' }, process.env.JWT_SECRET);
+  const expiresIn = 60 * 60;
+  const tokenType = 'Bearer';
+
+  const tokenInstance = new Token({
+    accessToken,
+    refreshToken,
+    expiresIn,
+    tokenType,
+    clientId,
+  });
+
+  await tokenInstance.save();
+
+  return {
+    access_token: accessToken,
+    token_type: tokenType,
+    expires_in: expiresIn,
+    refresh_token: refreshToken,
+  };
 }
 
 export { authorize, token };
