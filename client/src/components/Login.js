@@ -6,22 +6,6 @@ import mq from '../media/screens';
 import { Button } from './index';
 
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { adolfo: null };
-  }
-
-  llamarAdolfo = async () => {
-    const callit = await fetch('http://localhost:3001/adolfo', {
-      method: 'GET',
-      mode: 'no-cors'
-    });
-    console.log(callit);
-    this.setState({
-      adolfo: callit.body
-    });
-  };
-
   render() {
     const LoginContainer = styled('div')({
       border: '1px solid lightBlue',
@@ -47,16 +31,7 @@ class Login extends React.Component {
         <Text>
           Choose one of the following ways to authenticate in the application
         </Text>
-        <div
-          onClick={() => {
-            console.log('hola');
-            this.llamarAdolfo();
-          }}
-        >
-          Loggin with Authorization Server
-        </div>
-
-        {this.state.adolfo && <h1>{this.state.adolfo}</h1>}
+        <Button link="">Loggin with Authorization Server</Button>
       </LoginContainer>
     );
   }

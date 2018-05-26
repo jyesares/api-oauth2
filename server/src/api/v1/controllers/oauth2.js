@@ -2,8 +2,7 @@ import jwt from 'jsonwebtoken';
 import createError from 'http-errors';
 
 import { Client, Code, Token } from '../models';
-
-import { validRequest, uniqueId } from './index';
+import { validRequest, uniqueIdUtil as uniqueId } from './index';
 
 // Create OAuth2 server
 // const server = oauth2orize.createServer();
