@@ -1,0 +1,6 @@
+{
+  "TOKEN_NOT_FOUND": {
+    "status": 401,
+    "message": "Unauthorized"
+  }
+}
