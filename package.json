@@ -15,7 +15,7 @@
     "start": "yarn client-prod && yarn server-prod",
     "server-prod": "cd server && yarn start",
     "client-prod": "cd client && yarn build",
-    "test": "cd server && yarn test"
+    "test": "cd server && yarn test --watchAll=false"
   },
   "dependencies": {
     "concurrently": "^3.5.1"
