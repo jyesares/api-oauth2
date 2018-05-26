@@ -1,41 +1,23 @@
 {
-  "name": "api-oauth2",
-  "version": "0.3.0",
+  "version": "0.5.0",
+  "description": "api-oauth2",
+  "main": "index.js",
+  "repository": "https://github.com/jyesares/api-oauth2.git",
+  "author": "jyesares <javiyesares@gmail.com>",
+  "license": "MIT",
   "private": true,
+  "workspaces": ["client", "server"],
   "scripts": {
     "dev":
-      "NODE_ENV=dev DEBUG=api-oauth2:* nodemon ./bin/dev --exec babel-node --presets env",
-    "start": "node ./bin/prod",
-    "build-server": "babel src -d lib --copy-files",
-    "prestart": "npm run build",
-    "clean": "rm -rf ./lib && mkdir ./lib",
-    "build": "npm run clean && npm run build-server",
-    "pretest": "npm run lint",
-    "test": "jest",
-    "lint": "eslint **/*.js"
+      "concurrently --kill-others-on-fail 'yarn server-dev' 'yarn client-dev'",
+    "server-dev": "cd server && yarn run dev",
+    "client-dev": "cd client && yarn start",
+    "start": "yarn client-prod && yarn server-prod",
+    "server-prod": "cd server && yarn start",
+    "client-prod": "cd client && yarn build",
+    "test": "cd server && yarn ci-test"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "dotenv": "^5.0.1",
-    "express": "~4.16.0",
-    "http-errors": "~1.6.2",
-    "jade": "^1.11.0",
-    "jsonwebtoken": "^8.2.1",
-    "moment": "^2.22.1",
-    "mongoose": "^5.1.0",
-    "morgan": "~1.9.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.8.0",
-    "jest": "^22.4.3"
+    "concurrently": "^3.5.1"
   }
 }
