@@ -3,20 +3,19 @@
   "version": "0.5.1",
   "private": true,
   "scripts": {
-    "dev":
-      "NODE_ENV=dev DEBUG=api-oauth2:* nodemon ./bin/dev --exec babel-node --presets env",
+    "dev": "NODE_ENV=dev DEBUG=api-oauth2:* nodemon ./bin/dev --exec babel-node --presets env",
     "start": "node ./bin/prod",
-    "build-server": "../node_modules/.bin/babel src -d lib --copy-files",
+    "build-server": "babel src -d lib --copy-files",
     "prestart": "yarn build",
     "clean": "rm -rf ./lib && mkdir ./lib",
     "build": "yarn clean && yarn build-server",
     "pretest": "yarn lint",
     "test": "NODE_ENV=test jest --env=node --watchAll --coverage",
-    "ci-test":
-      "NODE_ENV=test jest --env=node --coverage --coverageReporters=text-lcov | coveralls",
+    "ci-test": "NODE_ENV=test jest --env=node --coverage --coverageReporters=text-lcov | coveralls",
     "lint": "../node_modules/.bin/eslint **/*.js"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "connect-timeout": "^1.9.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -36,7 +35,6 @@
     "winston-daily-rotate-file": "^3.1.4"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-jest": "^23.0.0",
     "babel-plugin-rewire": "^1.1.0",
