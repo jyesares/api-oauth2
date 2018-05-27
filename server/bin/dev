@@ -26,7 +26,7 @@ var server;
  * Connect to mongodb
  */
 
-mongoose.connect(`${process.env.MONGODB_URL}/dev`);
+mongoose.connect(`${process.env.MONGODB_URL}`);
 
 var db = mongoose.connection;
 db.on('error', onErrorMongoose);
