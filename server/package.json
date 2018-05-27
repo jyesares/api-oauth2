@@ -6,7 +6,7 @@
     "dev":
       "NODE_ENV=dev DEBUG=api-oauth2:* nodemon ./bin/dev --exec babel-node --presets env",
     "start": "node ./bin/prod",
-    "build-server": "babel src -d lib --copy-files",
+    "build-server": "../node_modules/.bin/babel src -d lib --copy-files",
     "prestart": "yarn build",
     "clean": "rm -rf ./lib && mkdir ./lib",
     "build": "yarn clean && yarn build-server",
