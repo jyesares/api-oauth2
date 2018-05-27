@@ -13,7 +13,7 @@
     "pretest": "yarn lint",
     "test": "NODE_ENV=test jest --env=node --watchAll --coverage",
     "ci-test":
-      "NODE_ENV=test jest --env=node --coverage --coverageReporters=text-lcov | coveralls",
+      "NODE_ENV=test jest --env=node --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "lint": "../node_modules/.bin/eslint **/*.js"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
     "babel-preset-env": "^1.7.0",
     "connect-timeout": "^1.9.0",
     "cookie-parser": "~1.4.3",
+    "coveralls": "^3.0.1",
     "debug": "~2.6.9",
     "dotenv": "^5.0.1",
     "eslint-config-airbnb": "^16.1.0",
@@ -42,7 +43,6 @@
   },
   "devDependencies": {
     "babel-jest": "^23.0.0",
-    "coveralls": "^3.0.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.11.0",
