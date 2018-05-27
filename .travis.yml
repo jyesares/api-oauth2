@@ -21,4 +21,3 @@ jobs:
     - stage: Continuous Integration
       node_js: node
       script: docker-compose run app yarn test
-      #script: docker-compose exec app jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage

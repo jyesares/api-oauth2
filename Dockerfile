@@ -20,7 +20,7 @@ RUN yarn
 COPY . /app
 
 # Application default port
-EXPOSE 3001
+EXPOSE 3000
 
 # Run npm start on host
 CMD [ "yarn", "start" ]
