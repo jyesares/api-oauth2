@@ -2,8 +2,8 @@
 
 ### Server
 
-[![Build Status](https://travis-ci.org/jyesares/api-oauth2.svg?branch=develop)](https://travis-ci.org/jyesares/api-oauth2)
-[![Coverage Status](https://coveralls.io/repos/github/jyesares/api-oauth2/badge.svg)](https://coveralls.io/github/jyesares/api-oauth2)
+[![Build Status](https://travis-ci.org/jyesares/api-oauth2.svg?branch=master&service=github)](https://travis-ci.org/jyesares/api-oauth2)
+[![Coverage Status](https://coveralls.io/repos/github/jyesares/api-oauth2/badge.svg?branch=master&service=github)](https://coveralls.io/github/jyesares/api-oauth2)
 
 ### Usage
 
