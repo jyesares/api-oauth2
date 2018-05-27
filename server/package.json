@@ -17,6 +17,11 @@
     "lint": "../node_modules/.bin/eslint **/*.js"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-rewire": "^1.1.0",
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
     "connect-timeout": "^1.9.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -36,12 +41,7 @@
     "winston-daily-rotate-file": "^3.1.4"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-jest": "^23.0.0",
-    "babel-plugin-rewire": "^1.1.0",
-    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
     "coveralls": "^3.0.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
