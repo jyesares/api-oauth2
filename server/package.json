@@ -1,16 +1,16 @@
 {
   "name": "api-oauth2",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "private": true,
   "scripts": {
     "dev":
       "NODE_ENV=dev DEBUG=api-oauth2:* nodemon ./bin/dev --exec babel-node --presets env",
     "start": "node ./bin/prod",
-    "build-server": "babel src -d lib --copy-files",
-    "prestart": "npm run build",
+    "build-server": "./node_modules/.bin/babel src -d lib --copy-files",
+    "prestart": "yarn build",
     "clean": "rm -rf ./lib && mkdir ./lib",
-    "build": "npm run clean && npm run build-server",
-    "pretest": "npm run lint",
+    "build": "yarn clean && yarn build-server",
+    "pretest": "yarn lint",
     "test": "NODE_ENV=test jest --env=node --watchAll --coverage",
     "ci-test":
       "NODE_ENV=test jest --env=node --coverage --coverageReporters=text-lcov | coveralls",
