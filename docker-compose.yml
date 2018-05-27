@@ -1,0 +1,20 @@
+version: "2"
+services:
+  app:
+    container_name: api-oauth2
+    restart: always
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_URL=mongodb://mongo/prod
+    
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
