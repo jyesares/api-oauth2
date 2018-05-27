@@ -1,4 +1,8 @@
 export default (body, options) => {
+  if (!body) {
+    return false;
+  }
+
   if (Object.keys(body).length === 0) {
     return false;
   }
